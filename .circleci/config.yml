@@ -7,7 +7,7 @@ workflows:
   generate-audits:
     jobs:
       - hugo/build:
-          version: '0.120.4' 
+          version: v0.120.4
           hugo-extra-flags: --config hugo.toml
           html-proofer: false
           pre-steps:
