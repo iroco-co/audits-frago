@@ -51,3 +51,9 @@ Tester le site
 ```shell
 hugo serve
 ```
+Ignorer les fichiers générés.
+
+```gitignore
+public
+.hugo_build.lock
+```
