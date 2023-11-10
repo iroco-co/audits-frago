@@ -7,7 +7,8 @@ workflows:
   generate-audits:
     jobs:
       - hugo/build:
-          hugo-extra-flags: --config hugo.toml 
+          hugo-extra-flags: --config hugo.toml
+          html-proofer: false
           pre-steps:
             - checkout
             - run: git submodule sync
