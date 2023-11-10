@@ -1,4 +1,4 @@
-baseURL = 'https://iroco.co/audits'
+baseURL = 'https://iroco.co/audits/'
 languageCode = 'en-us'
 title = 'Iroco'
-theme = "frago"
+theme = 'frago'

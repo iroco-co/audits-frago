@@ -6,6 +6,6 @@ audits:
   2023-11-10:
     guidelines: "RGAA 4.1"
     condition: "Auto-évaluation"
-    technologies: ["HTML", "CSS", "JS"]
-    tools: ["Manuel"]
-    environment: ["MacOS", "Brave"]
+    technologies: ["HTML", "CSS", "JS", "PDF"]
+    tools: ["Wave", "AXE", "Web Developper","Usability Hike","Heading Maps"]
+    environment: ["MacOS", "Firefox", "Chrome", "ChromeVox"]
