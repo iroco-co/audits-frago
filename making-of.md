@@ -182,3 +182,25 @@ Et positionné des valeurs `"nc"` temporairement pour que ça puisse être inter
 "12","9","1","nc","nc","nc","nc","nc","nc","nc","nc","nc"
 
 ```
+
+Pour modifier l'audit CSV je recommande d'utiliser le mode "Data" de l'éditeur Jetbrains (IntelliJ, Webstorm ...).
+
+![Editeur Jetbrains ouvert sur un fichier CSV en mode "Data". Similaire à un tableur. Les options d'affichage de l'éditeur invitent à changer le format du fichier CSV](CSV_audit_with_jetbrains_editor_in_data_mode.png)
+
+Configuré de la manière suivante : 
+- Format
+  - Value separator:  Comma
+  - Row separator: Newline
+  - Null value text : Empty string
+  - Quote values: Always
+  - Trim whitespaces: `false`
+  - First row is header : `true`
+  - First column is header: `false`
+- Header format
+  - Value separator:  Comma
+  - Row separator: Newline
+  - Null value text : Empty string
+  - Quote values: Always
+  - Trim whitespaces: `false`
+
+![Menu de configuration du format CSV](CSV_configuration_menu_in_jetbrains_editor.png)
