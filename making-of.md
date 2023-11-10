@@ -6,6 +6,7 @@
   - [X] Theme Frago avec git submodule
   - [X] .gitignore
 - [ ] Mettre en place la CI sur CircleCI
+  - Next generation convenience Image for circleCI : https://circleci.com/developer/images
 - [ ] Déployer avec Ansible
   - [ ] Créer un role clé en main pour installer Frago avec ansible
     - [ ] Créer dépôt `??frago??` dans l’organisation https://github.com/lowdit/
@@ -57,4 +58,13 @@ Ignorer les fichiers générés.
 ```gitignore
 public
 .hugo_build.lock
+```
+
+Fichier de configuration hugo
+
+```toml
+baseURL = 'https://iroco.co/audits'
+languageCode = 'en-us'
+title = 'Iroco'
+theme = "frago"
 ```
