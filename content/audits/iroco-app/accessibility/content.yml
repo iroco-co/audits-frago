@@ -1,0 +1,11 @@
+website: "iroco.co"
+contacts:
+  email: hello@iroco.fr
+  address : 29 rue Servan, 38000 GRENOBLE
+audits:
+  2023-11-10:
+    guidelines: "RGAA 4.1"
+    condition: "Auto-évaluation"
+    technologies: ["HTML", "CSS", "JS"]
+    tools: []
+    environment: ["MacOS", "Brave"]
