@@ -1,19 +1,19 @@
 # Mise en place de Frago pour Iroco
 
-- [ ] Créer un dépôt GIT
+- [X] Créer un dépôt GIT
   - License? MIT? CC ?
 - [ ] Bootstrapper Frago 
-  - [ ] Theme frago avec git submodule
+  - [X] Theme Frago avec git submodule
 - [ ] Mettre en place la CI sur CircleCI
 - [ ] Déployer avec Ansible
   - [ ] Créer un role clé en main pour installer Frago avec ansible
     - [ ] Créer dépôt `??frago??` dans l’organisation https://github.com/lowdit/
 - [ ] Contribuer à Frago
-  - Démarrage d'un dépôt Frago
-    - [ ] Template github?
+  - Démarrage d’un dépôt Frago
+    - [ ] Template GitHub?
       - Pros : facilite le démarrage
       - Cons : on doit le maintenir à jour
-        - Ca pourrait se tester automatiquement  
+        - Ça pourrait se tester automatiquement  
   - Documentation Frago
     - [ ] Hébergement Ansible/Nginx
   - https://lowdit.github.io/frago/docs/demarrer/installer-hugo/#h%C3%A9berger
@@ -33,4 +33,21 @@ git config pull.rebase true
 git branch --set-upstream-to=origin/main main
 git pull
 git push --set-upstream origin main
+```
+
+
+## Bootstrap Frago
+
+[Installer Hugo](https://lowdit.github.io/frago/docs/demarrer/installer-hugo/).
+
+J’ai choisi d’installer le thème Frago à l’aide des submodules de Git.
+
+```shell
+git submodule add -f https://github.com/lowdit/frago.git/ themes/frago && git submodule update --init --recursive && hugo --gc --minify --buildFuture --templateMetrics
+```
+
+Tester le site
+
+```shell
+hugo serve
 ```
