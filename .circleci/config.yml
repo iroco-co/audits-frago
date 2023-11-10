@@ -15,5 +15,5 @@ workflows:
             - run: git submodule update --init
           post-steps:
             - store_artifacts:
-              path: public
-              destination: frago-site
+                path: public
+                destination: frago-site
