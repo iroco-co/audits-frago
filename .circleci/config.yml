@@ -13,3 +13,7 @@ workflows:
             - checkout
             - run: git submodule sync
             - run: git submodule update --init
+          post-steps:
+            - store_artifacts:
+                path: /public
+                destination: frago-site
