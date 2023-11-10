@@ -16,4 +16,4 @@ workflows:
           post-steps:
             - store_artifacts:
                 path: public
-                destination: frago-site
+                destination: audits
