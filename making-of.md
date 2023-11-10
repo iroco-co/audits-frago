@@ -68,3 +68,30 @@ languageCode = 'en-us'
 title = 'Iroco'
 theme = "frago"
 ```
+
+
+## CI avec CircleCi
+
+```yml
+
+version: 2.1
+
+orbs:
+  hugo: circleci/hugo@1.3.0
+
+workflows:
+  generate-audits:
+    jobs:
+      - hugo/build:
+          hugo-extra-flags: --config hugo.toml
+          html-proofer: false
+          pre-steps:
+            - checkout
+            - run: git submodule sync
+            - run: git submodule update --init
+          post-steps:
+            - store_artifacts:
+                path: public
+                destination: audits
+
+```
