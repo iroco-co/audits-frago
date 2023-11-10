@@ -29,5 +29,8 @@ git init
 
 ```shell
 git remote add origin git@github.com:iroco-co/audits-frago.git
-git push -u origin --all
+git config pull.rebase true
+git branch --set-upstream-to=origin/main main
+git pull
+git push --set-upstream origin main
 ```
