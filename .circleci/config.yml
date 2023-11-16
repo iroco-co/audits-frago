@@ -6,7 +6,7 @@ orbs:
 workflows:
   generate-audits:
     jobs:
-      - hugo/build:
+      - hugo/build: # Hugo generates site into ./public
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml
           html-proofer: false
@@ -15,6 +15,7 @@ workflows:
             - run: git submodule sync
             - run: git submodule update --init
           post-steps:
+            - run : tar czf audits-frago.tar.gz public
             - store_artifacts:
-                path: public
-                destination: audits
+                path: audits-frago.tar.gz
+                destination: audits-frago.tar.gz
