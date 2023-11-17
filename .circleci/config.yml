@@ -2,24 +2,13 @@ version: 2.1
 
 orbs:
   hugo: circleci/hugo@1.3.0
-  
-jobs:
-  publish-github-release:
-    docker:
-      - image: cibuilds/github:0.10
-    steps:
-      - attach_workspace:
-          at: ./artifacts
-      - run:
-          name: "Publish Release on GitHub"
-          command: |
-            VERSION=$(my-binary --version)
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/  
+  github-cli: circleci/github-cli@2.2.0
 
 workflows:
   generate-audits:
     jobs:
       - hugo/build: # Hugo generates site into ./public
+          name: build-staging-frago
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml --baseURL https://audits.test.iroco.co/
           html-proofer: false
@@ -41,6 +30,7 @@ workflows:
                 path: audits.test.iroco.co.tar.gz
                 destination: audits.test.iroco.co.tar.gz
       - hugo/build: # Hugo generates site into ./public
+          name: build-prod-frago
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml --baseURL https://audits.iroco.co/
           html-proofer: false
@@ -60,5 +50,14 @@ workflows:
             - store_artifacts:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
-      - publish-github-release
-
+      - github-cli/release:
+          tag: truc
+          draft: false
+          prerelease: false
+          files: ./artifacts/audits.iroco.co.tar.gz,./artifacts/audits.test.iroco.co.tar.gz
+          requires:
+            - "build-staging-frago"
+            - "build-prod-frago"
+          pre-steps:
+            - attach_workspace:
+                at: ./artifacts
