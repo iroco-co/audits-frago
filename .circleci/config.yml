@@ -16,6 +16,14 @@ workflows:
             - run: git submodule update --init
           post-steps:
             - run : tar czf audits.test.iroco.co.tar.gz public
+                  # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
+            - persist_to_workspace:
+                # Must be an absolute path, or relative path from working_directory. This is a directory in the execution
+                # environment which is taken to be the root directory of the workspace.
+                root: workspace
+                # Must be relative path from root
+                paths:
+                  - audits.test.iroco.co.tar.gz
             - store_artifacts:
                 path: audits.test.iroco.co.tar.gz
                 destination: audits.test.iroco.co.tar.gz
@@ -29,6 +37,13 @@ workflows:
             - run: git submodule update --init
           post-steps:
             - run : tar czf audits.iroco.co.tar.gz public
+            - persist_to_workspace:
+                # Must be an absolute path, or relative path from working_directory. This is a directory in the execution
+                # environment which is taken to be the root directory of the workspace.
+                root: workspace
+                # Must be relative path from root
+                paths:
+                  - audits.iroco.co.tar.gz
             - store_artifacts:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
