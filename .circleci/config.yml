@@ -7,50 +7,43 @@ orbs:
 workflows:
   generate-audits:
     jobs:
-      - hugo/build: # Hugo generates site into ./public
-          name: "build-staging-frago"
+      - hugo/build: # Let's factorize this duplication later
+          name: build-staging-frago
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml --baseURL https://audits.test.iroco.co/
           html-proofer: false
+          persist-to-workspace: false # We manage workspace ourselve below since we don't want to use the job's defaults
           pre-steps:
             - checkout
             - run: git submodule sync
             - run: git submodule update --init
           post-steps:
-            - run : mkdir /tmp/workspace-staging
-            - run : tar czf /tmp/workspace-staging/audits.test.iroco.co.tar.gz public
-                  # Persist the specified paths (workspace/echo-output) into the workspace for use in downstream job.
+            - run : tar czf audits.test.iroco.co.tar.gz public # Hugo generates site into ./public
             - persist_to_workspace:
-                # Must be an absolute path, or relative path from working_directory. This is a directory in the execution
-                # environment which is taken to be the root directory of the workspace.
-                root: /tmp/workspace-staging
-                # Must be relative path from root
+                root: .
                 paths:
                   - audits.test.iroco.co.tar.gz
             - store_artifacts:
-                path: /tmp/workspace-staging/audits.test.iroco.co.tar.gz
+                path: audits.test.iroco.co.tar.gz
                 destination: audits.test.iroco.co.tar.gz
-      - hugo/build: # Hugo generates site into ./public
-          name: "build-prod-frago"
+      - hugo/build:
+          name: build-prod-frago
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml --baseURL https://audits.iroco.co/
           html-proofer: false
+          persist-to-workspace: false # We manage workspace ourselve below since we don't want to use the job's defaults
           pre-steps:
             - checkout
             - run: git submodule sync
             - run: git submodule update --init
           post-steps:
-            - run : mkdir /tmp/workspace-prod
-            - run : tar czf /tmp/workspace-prod/audits.iroco.co.tar.gz public
+            - run : tar czf audits.iroco.co.tar.gz public # Hugo generates site into ./public
             - persist_to_workspace:
-                # Must be an absolute path, or relative path from working_directory. This is a directory in the execution
-                # environment which is taken to be the root directory of the workspace.
-                root: /tmp/workspace-prod
-                # Must be relative path from root
+                root: .
                 paths:
                   - audits.iroco.co.tar.gz
             - store_artifacts:
-                path: /tmp/workspace-prod/audits.iroco.co.tar.gz
+                path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
       - github-cli/release:
           tag: truc
