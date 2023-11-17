@@ -8,14 +8,27 @@ workflows:
     jobs:
       - hugo/build: # Hugo generates site into ./public
           version: 0.120.3
-          hugo-extra-flags: --config hugo.toml
+          hugo-extra-flags: --config hugo.toml --baseURL https://audits.test.iroco.co/
           html-proofer: false
           pre-steps:
             - checkout
             - run: git submodule sync
             - run: git submodule update --init
           post-steps:
-            - run : tar czf audits-frago.tar.gz public
+            - run : tar czf audits.test.iroco.co.tar.gz public
             - store_artifacts:
-                path: audits-frago.tar.gz
-                destination: audits-frago.tar.gz
+                path: audits.test.iroco.co.tar.gz
+                destination: audits.test.iroco.co.tar.gz
+      - hugo/build: # Hugo generates site into ./public
+          version: 0.120.3
+          hugo-extra-flags: --config hugo.toml --baseURL https://audits.iroco.co/
+          html-proofer: false
+          pre-steps:
+            - checkout
+            - run: git submodule sync
+            - run: git submodule update --init
+          post-steps:
+            - run : tar czf audits.iroco.co.tar.gz public
+            - store_artifacts:
+                path: audits.iroco.co.tar.gz
+                destination: audits.iroco.co.tar.gz
