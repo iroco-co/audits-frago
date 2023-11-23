@@ -55,18 +55,13 @@ workflows:
           name: github-cli-release
           tag: ${CIRCLE_TAG}
           title: "Release ${CIRCLE_TAG} by circleci"
+          prerelease: false
+          draft: false
+          notes-file: ''
+          files: /tmp/artifacts/*.tar.gz
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^[0-9]+\..*/
-      - github-cli/upload:
-          files: /tmp/artifacts/*.tar.gz
-          requires:
-            - "github-cli-release"
           pre-steps:
             - attach_workspace:
                 at: /tmp/artifacts
