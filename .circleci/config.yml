@@ -54,11 +54,11 @@ workflows:
       - github-cli/release:
           version: 2.39.1
           name: github-cli-release
-          tag: ${CIRCLE_TAG}
-          title: "Release ${CIRCLE_TAG} by circleci"
+          tag: '${CIRCLE_TAG}'
+          title: '${CIRCLE_TAG}'
           prerelease: false
           draft: false
-          notes-file: ''
+          additional_args: '--notes "from CI"'
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
