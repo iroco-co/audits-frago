@@ -6,11 +6,10 @@ orbs:
 
 jobs:
   gh-release:
-    name: Create GitHub release from tag ${CIRCLE_TAG}
     docker:
       - image: cimg/base:stable
     steps:
-      - gh/setup
+      - github-cli/setup
       - attach_workspace:
           at: /tmp/artifacts
       - run: gh release create --title "Test " --notes "notes" "${CIRCLE_TAG}"
