@@ -48,7 +48,7 @@ workflows:
             - store_artifacts:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
-         filters:
+          filters:
               tags:
                   only: /.*/
       - github-cli/release:
