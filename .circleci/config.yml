@@ -50,13 +50,13 @@ workflows:
           title: "The initial release"
           context:
             - GITHUB_TOKEN
-          files: ./artifacts/audits.iroco.co.tar.gz,./artifacts/audits.test.iroco.co.tar.gz
+          files: /tmp/artifacts/audits.iroco.co.tar.gz,/tmp/artifacts/audits.test.iroco.co.tar.gz
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
           pre-steps:
             - attach_workspace:
-                at: ./artifacts
+                at: /tmp/artifacts
           filters:
             tags:
               only: /^[0-9]+\..*/
