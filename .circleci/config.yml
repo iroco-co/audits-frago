@@ -4,6 +4,17 @@ orbs:
   hugo: circleci/hugo@1.3.0
   github-cli: circleci/github-cli@2.2.0
 
+jobs:
+  gh-release:
+    name: Create GitHub release from tag ${CIRCLE_TAG}
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - gh/setup
+      - attach_workspace:
+          at: /tmp/artifacts
+      - run: gh release create --title "Test " --notes "notes" "${CIRCLE_TAG}"
+
 workflows:
   generate-audits:
     jobs:
@@ -51,20 +62,10 @@ workflows:
           filters:
               tags:
                   only: /.*/
-      - github-cli/release:
-          version: 2.39.1
-          name: github-cli-release
-          tag: '${CIRCLE_TAG}'
-          title: '${CIRCLE_TAG}'
-          prerelease: false
-          draft: false
-          additional_args: '--notes "from CI"'
+      - gh-release:
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
-          pre-steps:
-            - attach_workspace:
-                at: /tmp/artifacts
           filters:
             branches:
               ignore: /.*/
