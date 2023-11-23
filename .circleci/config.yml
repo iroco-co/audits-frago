@@ -46,9 +46,10 @@ workflows:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
       - github-cli/release:
-          tag: truc
+          tag: 0.1.0
           draft: false
           prerelease: false
+          token: GITHUB_TOKEN
           files: ./artifacts/audits.iroco.co.tar.gz,./artifacts/audits.test.iroco.co.tar.gz
           requires:
             - "build-staging-frago"
@@ -56,6 +57,3 @@ workflows:
           pre-steps:
             - attach_workspace:
                 at: ./artifacts
-          post-steps:
-            - run: echo $GIHUB_TOKEN > gh_token.txt
-            - run: gh auth login --with-token < gh_token.txt
