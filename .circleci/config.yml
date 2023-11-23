@@ -13,8 +13,10 @@ jobs:
       - github-cli/clone
       - attach_workspace:
           at: /tmp/artifacts
-      - run: gh release create --title "Test " --notes "notes" "${CIRCLE_TAG}"
-
+      - run: |
+        gh release create --title "Release ${CIRCLE_TAG} from circleCI" --notes "notes" "${CIRCLE_TAG}"
+        gh release upload  "${CIRCLE_TAG}" "/tmp/artifacts/audits.test.iroco.co.tar.gz" "/tmp/artifacts/audits.iroco.co.tar.gz"
+        # gh release upload  "${CIRCLE_TAG}" "/tmp/artifacts/audits.test.iroco.co.tar.gz# https;//audits.test.iroco.co" "/tmp/artifacts/audits.iroco.co.tar.gz# https://audits.test.iroco.co"
 workflows:
   generate-audits:
     jobs:
