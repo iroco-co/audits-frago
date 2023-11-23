@@ -58,7 +58,6 @@ workflows:
           prerelease: false
           draft: false
           notes-file: ''
-          files: /tmp/artifacts/*.tar.gz
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
