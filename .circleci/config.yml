@@ -46,10 +46,9 @@ workflows:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
       - github-cli/release:
-          tag: 0.1.0
-          draft: false
-          prerelease: false
-          token: GITHUB_TOKEN
+          title: "The initial release"
+          context:
+            - GITHUB_TOKEN
           files: ./artifacts/audits.iroco.co.tar.gz,./artifacts/audits.test.iroco.co.tar.gz
           requires:
             - "build-staging-frago"
@@ -57,3 +56,6 @@ workflows:
           pre-steps:
             - attach_workspace:
                 at: ./artifacts
+          filters:
+            tags:
+              only: /^[0-9]+\..*/
