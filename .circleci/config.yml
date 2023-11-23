@@ -46,7 +46,7 @@ workflows:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
       - github-cli/upload:
-          files: /tmp/artifacts/audits.iroco.co.tar.gz,/tmp/artifacts/audits.test.iroco.co.tar.gz
+          files: /tmp/artifacts/*.tar.gz
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
