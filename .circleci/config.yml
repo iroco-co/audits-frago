@@ -48,9 +48,7 @@ workflows:
       - github-cli/release:
           name: github-cli-release
           tag: ${CIRCLE_TAG}
-          title: "Relase ${CIRCLE_TAG} by circleci"
-          context:
-            - GITHUB_TOKEN
+          title: "Release ${CIRCLE_TAG} by circleci"
           requires:
             - "build-staging-frago"
             - "build-prod-frago"
