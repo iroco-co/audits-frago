@@ -26,6 +26,9 @@ workflows:
             - store_artifacts:
                 path: audits.test.iroco.co.tar.gz
                 destination: audits.test.iroco.co.tar.gz
+          filters:
+              tags:
+                  only: /.*/
       - hugo/build:
           name: build-prod-frago
           version: 0.120.3
@@ -45,6 +48,9 @@ workflows:
             - store_artifacts:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
+         filters:
+              tags:
+                  only: /.*/
       - github-cli/release:
           name: github-cli-release
           tag: ${CIRCLE_TAG}
