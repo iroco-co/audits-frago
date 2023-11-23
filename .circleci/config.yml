@@ -10,6 +10,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - github-cli/setup
+      - github-cli/clone
       - attach_workspace:
           at: /tmp/artifacts
       - run: gh release create --title "Test " --notes "notes" "${CIRCLE_TAG}"
