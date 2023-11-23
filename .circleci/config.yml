@@ -56,5 +56,6 @@ workflows:
           pre-steps:
             - attach_workspace:
                 at: ./artifacts
+          steps:
             - run: echo $GIHUB_TOKEN > gh_token.txt
             - run: gh auth login --with-token < gh_token.txt
