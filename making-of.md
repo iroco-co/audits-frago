@@ -204,3 +204,5 @@ Configuré de la manière suivante :
   - Trim whitespaces: `false`
 
 ![Menu de configuration du format CSV](CSV_configuration_menu_in_jetbrains_editor.png)
+
+Note (BT): après avoir fait ces réglages et modifié le tableau j'ai observé que IntelliJ supprimait toujours les guillemets. Comme coutournement, il reste la modification en mode texte des valeurs du tableau.
