@@ -8,10 +8,10 @@ audits:
     condition: "Auto-évaluation"
     technologies: ["HTML", "CSS", "JS", "PDF"]
     tools: ["Wave", "AXE", "Web Developper","Usability Hike","Heading Maps"]
-    environment: ["MacOS", "Firefox", "Chrome", "ChromeVox"]
+    environment: ["MacOS","Linux", "Firefox", "Chrome", "ChromeVox"]
   2023-11-27:
     guidelines: "RGAA 4.1"
     condition: "Auto-évaluation"
     technologies: ["HTML", "CSS", "JS", "PDF"]
     tools: ["Wave", "AXE", "Web Developper","Usability Hike","Heading Maps"]
-    environment: ["MacOS", "Firefox", "Chrome", "ChromeVox"]
+    environment: ["MacOS", "Linux","Lynx", "Firefox", "Chrome", "ChromeVox"]
