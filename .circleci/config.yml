@@ -45,6 +45,8 @@ workflows:
                   only: /.*/
       - hugo/build:
           name: build-prod-frago
+          requires:
+            - "build-staging-frago"
           version: 0.120.3
           hugo-extra-flags: --config hugo.toml --baseURL https://audits.iroco.co/
           html-proofer: false
@@ -63,11 +65,12 @@ workflows:
                 path: audits.iroco.co.tar.gz
                 destination: audits.iroco.co.tar.gz
           filters:
-              tags:
-                  only: /.*/
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^[0-9]+\..*/
       - gh-release:
           requires:
-            - "build-staging-frago"
             - "build-prod-frago"
           filters:
             branches:
