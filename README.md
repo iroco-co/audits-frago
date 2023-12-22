@@ -9,7 +9,7 @@ Audits reports for
 - Green-IT (73 best practices)
 - Sobriété éditoriale, 
 - Opquast, 
-- RSE (Cigref)
+- RSE (Cigref) 
 
 ## Local development
 
