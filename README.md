@@ -23,6 +23,11 @@ Run as a local server
 hugo serve
 ```
 
+Or run with docker compose
+
+```shell
+docker compose up
+```
 
 ## Build for production
 
