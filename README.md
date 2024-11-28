@@ -13,10 +13,8 @@ Audits reports for
 
 ## Local development
 
-Fetch latest Frago theme.
-
 ```shell
-git submodule update --init --recursive
+hugo mod get github.com/lowdit/frago
 ```
 Run as a local server
 

@@ -2,3 +2,7 @@ baseURL = 'https://audits.test.iroco.co/'
 languageCode = 'fr'
 title = 'Iroco'
 theme = 'frago'
+
+[module]
+    [[module.imports]]
+        path = "github.com/lowdit/frago"
