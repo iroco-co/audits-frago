@@ -1,0 +1,30 @@
+website: "iroco.co"
+#Voir : https://github.com/lowdit/frago/blob/sandbox/content/audits/contributions-indirectes-en-ligne/rgesn/context.yml
+contacts:
+  email: bthomas@iroco.fr
+  address :
+audits:
+  2024-11-29:
+    guidelines: "RGESN 2.0"
+    condition: "Auto-évaluation"
+    criteria:
+      - id: "1.1"
+        norms:
+          - Norme 1
+          - Norme 2
+        description: |-
+          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+            * Ullamco nostrud nostrud qui.
+            * Voluptate dolor elit tempor ullamco duis.
+      - id: "1.2"
+        studies:
+          - Mon étude 1
+          - Mon étude 2
+          - Mon étude 3
+        target:
+          - les Agents
+          - les gens sympas
+        functionalities:
+          - Ma fonction 1
+          - Ma fonction 2
+          - Ma fonction 3
