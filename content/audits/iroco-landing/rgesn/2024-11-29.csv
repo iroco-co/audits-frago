@@ -1,77 +1,77 @@
-Thématiques,Critères,Évaluation
-1,1,"c|Au départ c'est un service d'email. Quels sont les réels besoins justifiant la création du service ?. Il existe d'autres services de mail (gmail, yahoomail, outlook, proton...). L'idée c'était de proposer un mail responsable, ouvert, engagé, respectant les données privées, que nous ne trouvions pas. La valeur ajoutée du service justifie-t-elle la mobilisation des ressources requises pour sa création ? Est-ce qu’on crée plus de valeur qu’on en détruit ? Les ressources mobilisées sont essentiellement humaines. En terme de machines, le service correspond à 2 petites machines (préprod, prod)."
-1,2,c|Nous avions défini deux personnas : la geek sensible à ses données et l'écolo qui souhaite un service à taille humaine.
-1,3,c|Nous avons lu les 115 bonnes pratiques d'écoconception web.  Nous évaluons en ce moment le service avec la RGESN.
-1,4,"c|C'est ce qu'on est en train de faire. Nous avons fait des tests de charge documentés sur le blog, pour le design."
-1,5,c|Nous avons réalisé une ACV du mail documentée sur le blog iroco. Nous avons également audits.iroco.co
-1,6,"c|Les seules données collectées sont faites sur iroco.co par matomo. Ainsi que les données pour le bon fonctionnement du site. Les logs sont conservées 30j."
-1,7,c|nous utlisons TLS pour l'accès aux services. Les mots de passes sont hachés en base de données.
-1,8,"c|A part mailjet, tous les services sont issus de l'open source."
-1,9,"c|A part mailjet, le service se base sur SMTP, IMAP, HTTP, HTTPS. Il est inter-opérable."
-1,10,c|Les protocoles d'interaction avec le service sont standards.
-2,1,c|Volonté d’être compatible avec des équipements de 8 ans. Tests réalisés avec Galaxy Tab 10.1 cf https://blog.iroco.co/benchs_sveltekit_pyramid/
-2,2,c|Testé avec Galaxy Tab sortie en 2011
-2,3,"c|Le service est statique, léger et téléchargé rapidement (600Ko)"
-2,4,c|Testé avec Android Nougat
-2,5,c|Le service est responsive
-2,6,c|Cf le blog d’Iroco ou les choix de conceptions ont été expliqués sous forme d’articles
-2,7,nc|Pas de stragégie.
-2,8,c|Eolas a été choisi pour le motif de reponsabilité environnementale. Gocardless est engagée également https://gocardless.com/blog/en-gb-sustainability-focus-the-link-between-plastic-oceans-and-climate/ reste abuseipdb qui est un service qui fait peu de choses.
-2,9,c|Design fait en ayant la cible de l’écoconception. 
-2,10,"nc|Par pour abuseipdb, ni pour mailjet, ni pour matomo. ALTCHA utilise un mécanisme appelé Preuve de Travail (PoW) pour authentifier et valider les interactions des utilisateurs. Le PoW exige un effort de calcul considérable de l’appareil de l’utilisateur pour valider les demandes."
-3,1,nt
-3,2,nt
-3,3,nt
-3,4,nt
-3,5,nt
-3,6,nt
-3,7,nt
-4,1,"c|Aucun contenu vidéo, audio ou animé n'est utilisé dans les services de l'écosystème Iroco."
-4,2,c
-4,3,"nc|Non : Les parcours de navigation sont optimisés et recentrés autour des fonctionnalités essentielles d’après les outils UX et les statistiques d’usages effectuées ; Non : Des indicateurs techniques pour les parcours identifiés ont été ou sont en cours de mise en place pour assurer l’optimisation dans le temps du parcours de navigation, à la lumière des retours récoltés. ALTCHA améliore l’expérience utilisateur en réduisant les frictions et en autorisant l’automatisation. Contrairement aux CAPTCHA traditionnels, qui peuvent être fastidieux et perturbateurs, ALTCHA offre une interaction plus fluide."
-4,4,"nt|https://iroco.co : Opt out pour matomo (https://iroco.co/faq#cookies) https://rezofora.co : pas de tracking https://app.iroco.co : pas de tracking, cookies uniquement fonctionnels. Pas d'informations sur l'utilisation des données ?"
-4,5,"c|En utilisant SvelteJs/SvelteKit (https://svelte.dev/docs/kit/form-actions), sur le site vitrine https://iroco.co et https://app.iroco.co , nous permettons l'utilisation de la majorité des interactions avec les mécanismes standard du navigateur (form, POST) sans l'utilisation de Javascript. Concernant le site vitrine https://rezofora.co , c'est un site statique n'utilisant aucun script javascript.  Le service d'e-mail fourni par Iroco s'appuie sur des standards (DAV, SMTP, IMAP) et peut être utilisé par des clients mail standards ainsi que des outils de notes, calendrier standard."
-4,6,"na|Aucun contenu vidéo, audio ou animé n'est utilisé dans les services de l'écosystème Iroco."
-4,7,"c|Les sites de l'écosystème Iroco n’utilisent pas de contenu vidéo, audio ou animé"
-4,8,nt|Le site https://iroco.co utilise uniquement des polices disponibles par défaut sur les navigateurs. Le site https://rezofora.co utilise une police tierce (inter) hébergée sur le site statique.  Conditions de conformité (au moins 1 valide) - Le nombre de polices téléchargées est limité à deux (avec au maximum quatre variantes au total) par page ou « unité d’affichage » (si la pagination n’est pas utilisée pour le service) ; 38 fichiers de variantes de font - La taille des polices téléchargées ne dépasse pas 400 Ko par page ou « unité d’affichage ». La plus grosse variante de Inter (InterVariable-Italic.woff2) fait 380904 bits
-4,9,nt|Aucune auto-complétion n'est utilisée dans l'écosystème Iroco.
-4,10,nc|En majorité oui. Un bug connu dans l'administration de compte (création d'utilisateurs) où le format n'est pas clairement explicité ni contrôlé
-4,11,"c|Sur les sites web de l'écosystème Iroco, il n'y a pas de téléversements de fichiers. Sur le serveur de mail, les pièces jointes sont limitées à 10 Mo.  Un email avec une pièce jointe trop grosse est envoyé au serveur. Si la pièce est trop grosse, le serveur retourne un message d'erreur et n'envoie pas l'e-mail au destinataire."
-4,12,"c|le service ne comprend pas de fonctionnalités ayant un impact environnemental significatif. Mis à part Altcha (voir 2.10). ALTCHA utilise un mécanisme appelé Preuve de Travail (PoW) pour authentifier et valider les interactions des utilisateurs. Le PoW exige un effort de calcul considérable de l’appareil de l’utilisateur pour valider les demandes. L‘impact d‘Altcha n‘a pas été mesuré."
-4,13,"c|Parmi les services numériques de l'écosystème Iroco qui génèrent des notifications, seul l'e-mail et Mattermost sont susceptible de générer des notifications.  La configuration des notifications e-mail est déléguée aux clients e-mail et calendrier.  Les clients Mattermost permettent aux utilisateurs de les désactiver.  Les infolettres sont gérées par Mailjet qui permet aux adhérents de se désinscrire."
-4,14,"c|https://app.iroco.co : Un lien de désabonnement au service est clairement visible sur la page de bienvenue. En cliquant dessus, il est expliqué clairement comment et quand les données sont supprimées et comment les récupérer.  Infolettre : Mailjet propose un lien de désinscription standard.  Choix de s'exclure du tracking mailjet est 'opt-out' : https://iroco.co/faq#cookies"
-4,15,"nc|Le critère est validé si le service numérique respecte les conditions cumulatives suivantes : ❌ Le service affiche sur son interface une information à destination des utilisateurs sur l’empreinte environnementale de l’usage du service. ✅ Le service numérique propose un mode d’affichage et d’usage sobre, par défaut N/A ou dont l’activation est laissée à la discrétion de l’utilisateur, pour diminuer l’empreinte environnementale associée à son usage.  ❌L’utilisateur pourra avoir accès à une information détaillant les paramètres de ce mode « sobriété énergétique » et les gains environnementaux associés. Documenter les actions mises en place dans la déclaration d’écoconception, en particulier l’information environnementale délivrée à l’utilisateur et le paramétrage du mode de « sobriété énergétique », y compris les gains environnementaux associés. Des articles de blog décrivent les actions en place, de la construction de nos services :  - https://blog.iroco.co/frontend-benchmark/ - https://blog.iroco.co/benchs_sveltekit_pyramid/ - https://blog.iroco.co/frontend-benchmark_vue_svelte/ - https://blog.iroco.co/frontend-benchmark_vue_react/ - https://blog.iroco.co/tir-raspberry/ - https://blog.iroco.co/tir-laptop/ - https://blog.iroco.co/frontend-benchmark/ - "
-5,1,"nt|https://iroco.co : utilisation exclusivement de SVG. Une analyse Lighthouse montre qu'une image png a une taille de width='2005' height='1080' mais est affichée en width='465.91'  height='250.95' (une économie de 304 Kb est possible en réduisant la taille de cette image).  https://rezofora.co : utilisation de SVG pour infographie (générée par draw.io, elle contient les métadonnées permettant l'import/export de/vers draw.io qui pourraient être retirées lors de la génération du site statique). Utilisation de JPG pour les photos de membres de l'équipe (360x360 px). Une analyse Lighthouse montre qu'avec des formats next-gen, 	la taille de l'ensemble des photos des membres de l'équipe, pourrait passer de 150.2 KiB à 92.2 KiB. Un logo de partenaires (AGIT) en png."
-5,2,nc|Je ne suis pas sur que le critère Lighthouse 'Efficiently encode images'  suffise à la conformité de ce critère RGESN. le critère Lighthouse 'Efficiently encode images' est passant pour - https://iroco.co - https://app.iroco.co - https://rezofora.co
-5,3,nc|Il y a des vidéos dans le blog servies sur Vimeo (https://blog.iroco.co/benchs_sveltekit_pyramid/) servies par défaut en 540p même si le format de la vidéo peut monter à 1080p). Mode « sobriété énergétique » : ❌ Smartphone : 480p maximum
-5,6,nt
-5,7,nt
-5,8,nt
-6,1,nt
-6,2,nt
-6,3,nt
-6,4,nt
-6,5,nt
-6,6,nt
-6,7,nt
-7,1,nt
-7,2,nt
-7,3,nt
-7,4,nt
-8,1,nt
-8,2,nt
-8,3,nt
-8,4,nt
-8,5,nt
-8,6,nt
-8,7,nt
-8,8,nt
-8,9,nt
-8,10,nt
-9,1,nt
-9,2,nt
-9,3,nt
-9,4,nt
-9,5,nt
-9,6,nt
-9,7,nt
+"Thématiques","Critères","Évaluation"
+"1","1","c|Au départ, c'est un service d'email. Quels sont les réels besoins justifiant la création du service ?. Il existe d'autres services de mail (gmail, yahoomail, outlook, proton...). L'idée c'était de proposer un mail responsable, ouvert, engagé, respectant les données privées, que nous ne trouvions pas. La valeur ajoutée du service justifie-t-elle la mobilisation des ressources requises pour sa création ? Est-ce qu’on crée plus de valeur qu’on en détruit ? Les ressources mobilisées sont essentiellement humaines. En terme de machines, le service correspond à 2 petites machines (préprod, prod)."
+"1","2","c|Nous avions défini deux personnas : la geek sensible à ses données et l'écolo qui souhaite un service à taille humaine."
+"1","3","c|Nous avons lu les 115 bonnes pratiques d'écoconception web.  Nous évaluons en ce moment le service avec la RGESN."
+"1","4","c|C'est ce qu'on est en train de faire. Nous avons fait des tests de charge documentés sur le blog, pour le design."
+"1","5","c|Nous avons réalisé une ACV du mail documentée sur le blog iroco. Nous avons également audits.iroco.co"
+"1","6","c|Les seules données collectées sont faites sur iroco.co par matomo. Ainsi que les données pour le bon fonctionnement du site. Les logs sont conservées 30j."
+"1","7","c|nous utilisons TLS pour l'accès aux services. Les mots de passes sont hachés en base de données."
+"1","8","c|A part mailjet, tous les services sont issus de l'open source."
+"1","9","c|A part mailjet, le service se base sur SMTP, IMAP, HTTP, HTTPS. Il est inter-opérable."
+"1","10","c|Les protocoles d'interaction avec le service sont standards."
+"2","1","c|Volonté d’être compatible avec des équipements de 8 ans. Tests réalisés avec Galaxy Tab 10.1 cf https://blog.iroco.co/benchs_sveltekit_pyramid/"
+"2","2","c|Testé avec Galaxy Tab sortie en 2011"
+"2","3","c|Le service est statique, léger et téléchargé rapidement (600Ko)"
+"2","4","c|Testé avec Android Nougat"
+"2","5","c|Le service est responsive"
+"2","6","c|Cf le blog d’Iroco ou les choix de conceptions ont été expliqués sous forme d’articles"
+"2","7","nc|Pas de stragégie."
+"2","8","c|Eolas a été choisi pour le motif de reponsabilité environnementale. Gocardless est engagée également https://gocardless.com/blog/en-gb-sustainability-focus-the-link-between-plastic-oceans-and-climate/ reste abuseipdb qui est un service qui fait peu de choses."
+"2","9","c|Design fait en ayant la cible de l’écoconception."
+"2","10","nc|Par pour abuseipdb, ni pour mailjet, ni pour matomo. ALTCHA utilise un mécanisme appelé Preuve de Travail (PoW) pour authentifier et valider les interactions des utilisateurs. Le PoW exige un effort de calcul considérable de l’appareil de l’utilisateur pour valider les demandes."
+"3","1","nt"
+"3","2","nt"
+"3","3","nt"
+"3","4","nt"
+"3","5","nt"
+"3","6","nt"
+"3","7","nt"
+"4","1","c|Aucun contenu vidéo, audio ou animé n'est utilisé dans les services de l'écosystème Iroco."
+"4","2","c"
+"4","3","nc|Non : Les parcours de navigation sont optimisés et recentrés autour des fonctionnalités essentielles d’après les outils UX et les statistiques d’usages effectuées ; Non : Des indicateurs techniques pour les parcours identifiés ont été ou sont en cours de mise en place pour assurer l’optimisation dans le temps du parcours de navigation, à la lumière des retours récoltés. ALTCHA améliore l’expérience utilisateur en réduisant les frictions et en autorisant l’automatisation. Contrairement aux CAPTCHA traditionnels, qui peuvent être fastidieux et perturbateurs, ALTCHA offre une interaction plus fluide."
+"4","4","nt|https://iroco.co : Opt out pour matomo (https://iroco.co/faq#cookies) https://rezofora.co : pas de tracking https://app.iroco.co : pas de tracking, cookies uniquement fonctionnels. Pas d'informations sur l'utilisation des données ?"
+"4","5","c|En utilisant SvelteJs/SvelteKit (https://svelte.dev/docs/kit/form-actions), sur le site vitrine https://iroco.co et https://app.iroco.co , nous permettons l'utilisation de la majorité des interactions avec les mécanismes standard du navigateur (form, POST) sans l'utilisation de Javascript. Concernant le site vitrine https://rezofora.co , c'est un site statique n'utilisant aucun script javascript.  Le service d'e-mail fourni par Iroco s'appuie sur des standards (DAV, SMTP, IMAP) et peut être utilisé par des clients mail standards ainsi que des outils de notes, calendrier standard."
+"4","6","na|Aucun contenu vidéo, audio ou animé n'est utilisé dans les services de l'écosystème Iroco."
+"4","7","c|Les sites de l'écosystème Iroco n’utilisent pas de contenu vidéo, audio ou animé"
+"4","8","nt|Le site https://iroco.co utilise uniquement des polices disponibles par défaut sur les navigateurs. Le site https://rezofora.co utilise une police tierce (inter) hébergée sur le site statique.  Conditions de conformité (au moins 1 valide) - Le nombre de polices téléchargées est limité à deux (avec au maximum quatre variantes au total) par page ou « unité d’affichage » (si la pagination n’est pas utilisée pour le service) ; 38 fichiers de variantes de font - La taille des polices téléchargées ne dépasse pas 400 Ko par page ou « unité d’affichage ». La plus grosse variante de Inter (InterVariable-Italic.woff2) fait 380904 bits"
+"4","9",nt|Aucune auto-complétion n'est utilisée dans l'écosystème Iroco.
+"4","10",nc|En majorité oui. Un bug connu dans l'administration de compte (création d'utilisateurs) où le format n'est pas clairement explicité ni contrôlé
+"4","11","c|Sur les sites web de l'écosystème Iroco, il n'y a pas de téléversements de fichiers. Sur le serveur de mail, les pièces jointes sont limitées à 10 Mo.  Un email avec une pièce jointe trop grosse est envoyé au serveur. Si la pièce est trop grosse, le serveur retourne un message d'erreur et n'envoie pas l'e-mail au destinataire."
+"4","12","c|le service ne comprend pas de fonctionnalités ayant un impact environnemental significatif. Mis à part Altcha (voir 2.10). ALTCHA utilise un mécanisme appelé Preuve de Travail (PoW) pour authentifier et valider les interactions des utilisateurs. Le PoW exige un effort de calcul considérable de l’appareil de l’utilisateur pour valider les demandes. L‘impact d‘Altcha n‘a pas été mesuré."
+"4","13","c|Parmi les services numériques de l'écosystème Iroco qui génèrent des notifications, seul l'e-mail et Mattermost sont susceptible de générer des notifications.  La configuration des notifications e-mail est déléguée aux clients e-mail et calendrier.  Les clients Mattermost permettent aux utilisateurs de les désactiver.  Les infolettres sont gérées par Mailjet qui permet aux adhérents de se désinscrire."
+"4","14","c|https://app.iroco.co : Un lien de désabonnement au service est clairement visible sur la page de bienvenue. En cliquant dessus, il est expliqué clairement comment et quand les données sont supprimées et comment les récupérer.  Infolettre : Mailjet propose un lien de désinscription standard.  Choix de s'exclure du tracking mailjet est 'opt-out' : https://iroco.co/faq#cookies"
+"4","15","nc|Le critère est validé si le service numérique respecte les conditions cumulatives suivantes : ❌ Le service affiche sur son interface une information à destination des utilisateurs sur l’empreinte environnementale de l’usage du service. ✅ Le service numérique propose un mode d’affichage et d’usage sobre, par défaut N/A ou dont l’activation est laissée à la discrétion de l’utilisateur, pour diminuer l’empreinte environnementale associée à son usage.  ❌L’utilisateur pourra avoir accès à une information détaillant les paramètres de ce mode « sobriété énergétique » et les gains environnementaux associés. Documenter les actions mises en place dans la déclaration d’écoconception, en particulier l’information environnementale délivrée à l’utilisateur et le paramétrage du mode de « sobriété énergétique », y compris les gains environnementaux associés. Des articles de blog décrivent les actions en place, de la construction de nos services :  - https://blog.iroco.co/frontend-benchmark/ - https://blog.iroco.co/benchs_sveltekit_pyramid/ - https://blog.iroco.co/frontend-benchmark_vue_svelte/ - https://blog.iroco.co/frontend-benchmark_vue_react/ - https://blog.iroco.co/tir-raspberry/ - https://blog.iroco.co/tir-laptop/ - https://blog.iroco.co/frontend-benchmark/ - "
+"5","1","nt|https://iroco.co : utilisation exclusivement de SVG. Une analyse Lighthouse montre qu'une image png a une taille de width='2005' height='1080' mais est affichée en width='465.91'  height='250.95' (une économie de 304 Kb est possible en réduisant la taille de cette image).  https://rezofora.co : utilisation de SVG pour infographie (générée par draw.io, elle contient les métadonnées permettant l'import/export de/vers draw.io qui pourraient être retirées lors de la génération du site statique). Utilisation de JPG pour les photos de membres de l'équipe (360x360 px). Une analyse Lighthouse montre qu'avec des formats next-gen, 	la taille de l'ensemble des photos des membres de l'équipe, pourrait passer de 150.2 KiB à 92.2 KiB. Un logo de partenaires (AGIT) en png."
+"5","2","nc|Je ne suis pas sur que le critère Lighthouse 'Efficiently encode images'  suffise à la conformité de ce critère RGESN. le critère Lighthouse 'Efficiently encode images' est passant pour - https://iroco.co - https://app.iroco.co - https://rezofora.co"
+"5","3","nc|Il y a des vidéos dans le blog servies sur Vimeo (https://blog.iroco.co/benchs_sveltekit_pyramid/) servies par défaut en 540p même si le format de la vidéo peut monter à 1080p). Mode « sobriété énergétique » : ❌ Smartphone : 480p maximum"
+"5","6","nt"
+"5","7","nt"
+"5","8","nt"
+"6","1","nt"
+"6","2","nt"
+"6","3","nt"
+"6","4","nt"
+"6","5","nt"
+"6","6","nt"
+"6","7","nt"
+"7","1","nt"
+"7","2","nt"
+"7","3","nt"
+"7","4","nt"
+"8","1","nt"
+"8","2","nt"
+"8","3","nt"
+"8","4","nt"
+"8","5","nt"
+"8","6","nt"
+"8","7","nt"
+"8","8","nt"
+"8","9","nc|Stratégie : Backup & Restore. Pas de présence d'un SLA"
+"8","10","nc|Certains traitements comme les sauvegardes de données sont réalisées dans des plages horaires de nuit."
+"9","1","c|Nous considérons que les technologies nécessitant une phase d'entraînement sont incohérentes avec nos valeurs de simplicité et de frugalité. Nous imaginons ce que serait un numérique acceptable en 2050. Ces technologies ne nous semblent pas nécessaires pour un service d'e-mail qu'on souhaite résilient."
+"9","2","na|le service numérique n'inclut pas de phase d’entraînement"
+"9","3","na|le service numérique n'inclut pas de phase d’entraînement"
+"9","4","na|le service numérique n'inclut pas de phase d’entraînement"
+"9","5","na|le service numérique n'inclut pas de phase d’entraînement"
+"9","6","na|le service numérique n'inclut pas de phase d’entraînement"
+"9","7","na|le service numérique n'inclut pas de phase d’inférence"
