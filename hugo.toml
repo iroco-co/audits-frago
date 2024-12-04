@@ -2,6 +2,7 @@ baseURL = 'https://audits.test.iroco.co/'
 languageCode = 'fr'
 title = 'Iroco'
 theme = 'frago'
+defaultContentLanguage = "fr"
 
 [module]
     [[module.imports]]
