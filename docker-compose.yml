@@ -9,3 +9,17 @@ services:
       - ~/hugo_cache:/tmp/hugo_cache
     ports:
       - 1313:1313
+
+  build-staging:
+    image: hugomods/hugo:ci-0.131.0
+    command: hugo  --destination public --gc --minify --buildFuture --cleanDestinationDir  -D --baseURL https://audits.test.iroco.co
+    volumes:
+      - ./:/src
+      - ~/hugo_cache:/tmp/hugo_cache
+
+  build-prod:
+    image: hugomods/hugo:ci-0.131.0
+    command: hugo  --destination public --gc --minify --buildFuture --baseURL https://audits.iroco.co
+    volumes:
+      - ./:/src
+      - ~/hugo_cache:/tmp/hugo_cache

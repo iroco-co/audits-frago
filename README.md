@@ -23,17 +23,32 @@ Run as a local server
 hugo serve
 ```
 
-Or run with docker compose
+Or run with docker compose (not that due to a bug, some content is not regenerated, and need to run again to be generated)
 
 ```shell
-docker compose up
+docker compose up server
+```
+
+## Build for staging
+
+Content is generated into `public`
+
+```shell
+## Build for production
+hugo --gc --minify --buildFuture --baseURL https://audits.test.iroco.co
+## With docker compose
+docker compose run build-staging
 ```
 
 ## Build for production
 
+Content is generated into `public`
+
 ```shell
 ## Build for production
 hugo --gc --minify --buildFuture --baseURL https://audits.iroco.co
+## With docker compose
+docker compose run build-prod
 ```
 
 - `--gc` : enable to run some cleanup tasks (remove unused cache files) after the build
