@@ -1,8 +1,8 @@
+"$schema": "rgesn-v2-declaration-schema.json"
 website: "iroco.co"
 #Voir : https://github.com/lowdit/frago/blob/sandbox/content/audits/contributions-indirectes-en-ligne/rgesn/context.yml
 contacts:
   email: bthomas@iroco.fr
-  address :
 audits:
   2024-11-29:
     guidelines: "RGESN 2.0"
@@ -11,325 +11,333 @@ audits:
       version: "2.0"
     criteria:
       - id: "1.1"
-        norms:
-          - Norme 1
-          - Norme 2
+        norms: # C'est quoi les normes ?
+          - Les 17 objectifs de développement durable (ODD) de l'ONU
+          - Les 9 limites planétaires
+          - Les 115 bonnes pratiques d'écoconception web
         description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
+          proposer un mail responsable, ouvert, engagé, respectant les données privées, que nous ne trouvions pas.   
+          
+          Il existe d'autres services de mail (gmail, yahoomail, outlook, proton...).   
+          Aucun n'étant open-source ni hébergé en France.
+          
+          * Les ressources mobilisées sont essentiellement humaines. 
+          * En terme de machines, le service correspond à 2 petites machines (préprod, prod).
       - id: "1.2"
-        studies:
-          - Mon étude 1
-          - Mon étude 2
-          - Mon étude 3
+#        studies:
+#          - Mon étude 1
+#          - Mon étude 2
+#          - Mon étude 3
         target:
-          - les Agents
-          - les gens sympas
+          - la geek sensible à ses données
+          - l'écolo qui souhaite un service à taille humaine
         functionalities:
-          - Ma fonction 1
-          - Ma fonction 2
-          - Ma fonction 3
+          - Envoyer et recevoir des e-mails avec votre client de messagerie préféré
+          - Calendrier reposant sur le standard CalDAV
+          - Carnet de contacts reposant sur le standard CardDAV
       - id: "1.3"
         referent:
-          - name: Jeanne Dupond
-            title: Big chief
-            service: Comptabilité
-          - name: Jean Cochin
-            title: Stagiaire
-            service: Photocopieuse
+          - name: Bruno Thomas
+            title: Directeur Technique
+            service: Développement
+          - name: Bruno Thomas
+            title: Développeur
+            service: Développement
       - id: "1.4"
-        date: 1er de chaque mois
+        date: 2 fois par an
       - id: "1.5"
         date: 18 juin 2025
-        method: ACV Numérique
-        scores:
-          co2: 10
-          energy: 10
-          abiotic: 10
-          water: 10
+        method: ACV relative à l'impact du mail (Voir l'article [Introduction de l'ACV mail](https://blog.iroco.co/acv-mail-presentation/). Télécharger [Étude des leviers de réduction des impacts du mail, avec une approche mixte attributionnel et conséquentielle – Iroco / ADEME](https://blog.iroco.co/images/ACV/ACV-mail-Hubblo-Iroco-01032024.pdf). Voir l'article [“Compter des impacts environnementaux avec les approches attributionnelles et conséquentielles”](https://hubblo.org/fr/articles/attributional-vs-consequential/) réalisé par Hubblo pour le compte d'Iroco.
+# Dans notre cas, on ne rentre pas dans les cases du score standard
+#        scores:
+#          co2: 10
+#          energy: 10
+#          abiotic: 10
+#          water: 10
       - id: "1.6"
+        intro: |-
+          Les seules données collectées sont faites sur iroco.co par matomo. 
+          Ainsi que les données pour le bon fonctionnement du site. 
+          Les logs sont conservées 30j.
         tools:
-          - Matomo
-          - Datahog
+          - Matomo (auto-hébergé par Iroco)
         functionalities:
-          - Ma fonction 1
-          - Ma fonction 2
-          - Ma fonction 3
-        mention: "https://exemple.gouv.fr"
+          - Mesure de fréquentation
+        mention: "https://iroco.co/faq#cookies"
       - id: "1.7"
         technologies:
-          - technology 1
-          - technology 2
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
+          - TLS 1.3
+          - X25519
+          - AES_128_GCM
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
       - id: "1.8"
         description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
+          A part mailjet, tous les services sont issus de l'open source.
         license:
           name: MIT
-          perimeter: total
+          perimeter: à l'exception de Mailjet, de l'infrastructure as code, du wiki interne et de l'application backoffice (ouverture du code en cours après nettoyage des sources), l'intégralité
       - id: "2.1"
         materials:
-          processors: 18
-          memory: 8Mb
+          processors: 1 cœur à 1,5 Ghz ou plus puissant
+          memory: 512Mb
         evolution:
           date: 30 Août 2024
-          description : Texte
+          description: |- 
+            Volonté d’être compatible avec des équipements de 8 ans.
+            
+            Tests réalisés avec Galaxy Tab 10.1 cf https://blog.iroco.co/benchs_sveltekit_pyramid/
       - id: "2.2"
         description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
+          Testé avec Galaxy Tab sortie en 2011
       - id: "2.3"
-        connexion: 10 Mb/s
+        connexion: 144 Kb/s
       - id: "2.4"
         configuration:
           actual:
-            - Item 1
-            - Item 2
-          evolution:
-            - Item 1
-            - Item 2
-      - id: "2.5"
-        display:
-          dynamique:
-            - Eléments 1
-            - Eléments 2
-          type: Item
-          size: Item
-          test: Item
-      - id: "2.8"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "2.9"
-        functionalities:
-          - Item 1
-          - Item 2
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "2.10"
-        services:
-          - name: Service 1
-            url: https://example.fr
-            criteria: |-
-              * Un critère
-              * Un autre critère
-          - name: Service 2
-            url: https://example.fr
-            criteria: |-
-              * Un critère
-              * Un autre critère
-      - id: "3.1"
-        framework:
-          - name: Framework 1
-            url: https://example.fr
-            criteria: |-
-              * Un critère
-              * Un autre critère
-            internal:
-              - Item1
-              - Item 2
-            external:
-              - Item1
-              - Item 2
-          - name: Framework 2
-            url: https://example.fr
-            criteria: |-
-              * Un critère
-              * Un autre critère
-      - id: "3.3"
-      - id: "3.4"
-        description: |-
-          - Le service numérique commercialisé avec le terminal [à compléter] sera mis à jour pendant toute la durée de vie du produit matériel, estimée à [à compléter]
-          - Les mises à jour évolutives non nécessaire à la conformité du service [ou du terminal associé] sont proposées indépendamment des mises à jour essentielles, et de façon transparente. Celles-ci n’ont pas d’incidences négatives sur le fonctionnement du service. [si pertinent] Le service propose également une version « Long Term support ».
-          - Le service numérique propose comme principaux types de mises à jour : [à compléter]. Il favorise ainsi les mises à jour incrémentielles / la séparation du code binaire.
-      - id: "3.7"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "4.5"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "4.6"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "4.7"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "4.12"
-        functionalities:
-          - Ma fonction 1
-          - Ma fonction 2
-          - Ma fonction 3
-        ways:
-          - Moyen 1
-          - Moyen 2
-          - Moyen 3
-        indicators:
-          - Indicateur 1
-          - Indicateur 2
-          - Indicateur 3
-      - id: "4.13"
-        notifications:
-          number: 3
-          frequency: jours
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "4.15"
-      - id: "5.2"
-        resolution: "oui"
-        settings: "oui"
-      - id: "5.3"
-        resolution: "18k"
-        settings: "Ma description"
-      - id: "5.4"
-        codec:
-          - Codec 1
-          - Codec 2
-        encoding:
-          video:
-            - h264
-            - h265
-          audio:
-            - mp3
-            - wave
-      - id: "5.5"
-        settings: "Très bien paramétré, trop long à expliquer, donc j'écris un commentaire court."
-      - id: "5.6"
-        codec:
-          - Codec 1
-          - Codec 2
-      - id: "5.7"
-        strategy: "Je m'en remet au référent accessibilité, car il est super sympa. Et on rigole bien"
-      - id: "6.1"
-        sizemax: 100kb
-        requestmax: 2
-      - id: "6.2"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "7.1"
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "7.4"
-        consensus:
-          - Consensus 1
-          - Consensus 2
-        description: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "8.1"
-        hosting: Bertrand Keller International
-        code: Oui
-        commitment: |-
-          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
-            * Ullamco nostrud nostrud qui.
-            * Voluptate dolor elit tempor ullamco duis.
-      - id: "8.2"
-        actions:
-          servicelife: Texte
-          impact: Texte
-          purchase: Texte
-          use: Texte
-          endoflife: Texte
-      - id: "8.3"
-        pue:
-          type : réel ou by design
-          value: 0.0
-      - id: "8.4"
-        wue:
-          type : réel ou by design
-          value: 0.0
-      - id: "8.5"
-        energy:
-          quantity: 1000
-          ppa: 10
-          autoconsumption: 10
-          guaranties: 10
-        renewable: 10
-        energycarbone: 10
-      - id: "8.6"
-        cities:
-          - Bourg-en-Bresse
-          - Neufchâteau
-        mix:
-          value: 20
-          source: https://example.com
-        sbti: oui
-        proximity: oui
-      - id: "8.7"
-        puissance: 1000000
-      - id: "8.10"
-        settings:
-          supply: Oui
-          availability: Oui
-          request: Oui
-      - id: "9.1"
-        target:
-          - les Agents
-          - les gens sympas
-        functionalities:
-          - Ma fonction 1
-          - Ma fonction 2
-          - Ma fonction 3
-        gains:
-          - Gains 1
-          - Gains 2
-          - Gains 3
-        trainingfrequency:
-          number: 3 fois
-          frequency: jours
-      - id: "9.2"
-        method:
-          - Méthode 1
-          - Méthode 2
-          - Méthode 3
-        features:
-          - Caractéristique 1
-          - Caractéristique 2
-          - Caractéristique 3
-      - id: "9.3"
-        training: Lorem
-        indicators:
-          - Indicateurs 1
-          - Indicateurs 2
-      - id: "9.4"
-        actions:
-          bdd: Item
-          limitation: Item
-          cache: Item
-      - id: "9.5"
-        parameters: Lorem
-        indicator: Lorem
-        description: Lorem
-      - id: "9.6"
-        training: Lorem
-        gains: 30
-      - id: "9.7"
-        inference: Lorem
-        satisfaction: Lorem
-        consommation: Lorem
-        goal: Lorem
-        action: Lorem
+            - Navigateur supportant TLS 1.2 ou supérieur (sans ce pré-requis, la connexion est impossible)
+            - Système d’exploitation (ou navigateur) reconnaissant l’autorité de certification Let’s Encrypt (sans ce pré-requis, la connexion demande de passer outre un message d’alerte)
+            - Navigateurs supportant les modules Flexible Box Layout
+#          evolution:
+#            - Item 1
+#            - Item 2
+#      - id: "2.5"
+#        display:
+#          dynamique:
+#            - Eléments 1
+#            - Eléments 2
+#          type: Item
+#          size: Item
+#          test: Item
+#      - id: "2.8"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "2.9"
+#        functionalities:
+#          - Item 1
+#          - Item 2
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "2.10"
+#        services:
+#          - name: Service 1
+#            url: https://example.fr
+#            criteria: |-
+#              * Un critère
+#              * Un autre critère
+#          - name: Service 2
+#            url: https://example.fr
+#            criteria: |-
+#              * Un critère
+#              * Un autre critère
+#      - id: "3.1"
+#        framework:
+#          - name: Framework 1
+#            url: https://example.fr
+#            criteria: |-
+#              * Un critère
+#              * Un autre critère
+#            internal:
+#              - Item1
+#              - Item 2
+#            external:
+#              - Item1
+#              - Item 2
+#          - name: Framework 2
+#            url: https://example.fr
+#            criteria: |-
+#              * Un critère
+#              * Un autre critère
+#      - id: "3.3"
+#      - id: "3.4"
+#        description: |-
+#          - Le service numérique commercialisé avec le terminal [à compléter] sera mis à jour pendant toute la durée de vie du produit matériel, estimée à [à compléter]
+#          - Les mises à jour évolutives non nécessaire à la conformité du service [ou du terminal associé] sont proposées indépendamment des mises à jour essentielles, et de façon transparente. Celles-ci n’ont pas d’incidences négatives sur le fonctionnement du service. [si pertinent] Le service propose également une version « Long Term support ».
+#          - Le service numérique propose comme principaux types de mises à jour : [à compléter]. Il favorise ainsi les mises à jour incrémentielles / la séparation du code binaire.
+#      - id: "3.7"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "4.5"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "4.6"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "4.7"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "4.12"
+#        functionalities:
+#          - Ma fonction 1
+#          - Ma fonction 2
+#          - Ma fonction 3
+#        ways:
+#          - Moyen 1
+#          - Moyen 2
+#          - Moyen 3
+#        indicators:
+#          - Indicateur 1
+#          - Indicateur 2
+#          - Indicateur 3
+#      - id: "4.13"
+#        notifications:
+#          number: 3
+#          frequency: jours
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "4.15"
+#      - id: "5.2"
+#        resolution: "oui"
+#        settings: "oui"
+#      - id: "5.3"
+#        resolution: "18k"
+#        settings: "Ma description"
+#      - id: "5.4"
+#        codec:
+#          - Codec 1
+#          - Codec 2
+#        encoding:
+#          video:
+#            - h264
+#            - h265
+#          audio:
+#            - mp3
+#            - wave
+#      - id: "5.5"
+#        settings: "Très bien paramétré, trop long à expliquer, donc j'écris un commentaire court."
+#      - id: "5.6"
+#        codec:
+#          - Codec 1
+#          - Codec 2
+#      - id: "5.7"
+#        strategy: "Je m'en remet au référent accessibilité, car il est super sympa. Et on rigole bien"
+#      - id: "6.1"
+#        sizemax: 100kb
+#        requestmax: 2
+#      - id: "6.2"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "7.1"
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "7.4"
+#        consensus:
+#          - Consensus 1
+#          - Consensus 2
+#        description: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "8.1"
+#        hosting: Bertrand Keller International
+#        code: Oui
+#        commitment: |-
+#          Voluptate cupidatat adipisicing veniam commodo tempor et nulla ea magna non.
+#            * Ullamco nostrud nostrud qui.
+#            * Voluptate dolor elit tempor ullamco duis.
+#      - id: "8.2"
+#        actions:
+#          servicelife: Texte
+#          impact: Texte
+#          purchase: Texte
+#          use: Texte
+#          endoflife: Texte
+#      - id: "8.3"
+#        pue:
+#          type: réel ou by design
+#          value: 0.0
+#      - id: "8.4"
+#        wue:
+#          type: réel ou by design
+#          value: 0.0
+#      - id: "8.5"
+#        energy:
+#          quantity: 1000
+#          ppa: 10
+#          autoconsumption: 10
+#          guaranties: 10
+#        renewable: 10
+#        energycarbone: 10
+#      - id: "8.6"
+#        cities:
+#          - Bourg-en-Bresse
+#          - Neufchâteau
+#        mix:
+#          value: 20
+#          source: https://example.com
+#        sbti: oui
+#        proximity: oui
+#      - id: "8.7"
+#        puissance: 1000000
+#      - id: "8.10"
+#        settings:
+#          supply: Oui
+#          availability: Oui
+#          request: Oui
+#      - id: "9.1"
+#        target:
+#          - les Agents
+#          - les gens sympas
+#        functionalities:
+#          - Ma fonction 1
+#          - Ma fonction 2
+#          - Ma fonction 3
+#        gains:
+#          - Gains 1
+#          - Gains 2
+#          - Gains 3
+#        trainingfrequency:
+#          number: 3 fois
+#          frequency: jours
+#      - id: "9.2"
+#        method:
+#          - Méthode 1
+#          - Méthode 2
+#          - Méthode 3
+#        features:
+#          - Caractéristique 1
+#          - Caractéristique 2
+#          - Caractéristique 3
+#      - id: "9.3"
+#        training: Lorem
+#        indicators:
+#          - Indicateurs 1
+#          - Indicateurs 2
+#      - id: "9.4"
+#        actions:
+#          bdd: Item
+#          limitation: Item
+#          cache: Item
+#      - id: "9.5"
+#        parameters: Lorem
+#        indicator: Lorem
+#        description: Lorem
+#      - id: "9.6"
+#        training: Lorem
+#        gains: 30
+#      - id: "9.7"
+#        inference: Lorem
+#        satisfaction: Lorem
+#        consommation: Lorem
+#        goal: Lorem
+#        action: Lorem
