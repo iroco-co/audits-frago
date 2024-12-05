@@ -37,7 +37,7 @@ Content is generated into `public`
 ## Build for production
 hugo --gc --minify --buildFuture --baseURL https://audits.test.iroco.co
 ## With docker compose
-docker compose run build-staging
+docker compose run --rm build-staging
 ```
 
 ## Build for production
@@ -48,7 +48,7 @@ Content is generated into `public`
 ## Build for production
 hugo --gc --minify --buildFuture --baseURL https://audits.iroco.co
 ## With docker compose
-docker compose run build-prod
+docker compose run --rm build-prod
 ```
 
 - `--gc` : enable to run some cleanup tasks (remove unused cache files) after the build
